@@ -2,10 +2,14 @@ La carpeta pintos/src/ contiene el código original del SO que se va a modificar
 
 Las carpetas y una explicación de su contenido es:
 
-	- devices: 
-	- filesys: 
-	- lib: 
-	- misc: 
+	- devices: Esta carpeta contiene el código fuente para la interconexión de los dispositivos de entrada/salida: teclado,temporizador, 			   disco, etc.
+
+	- filesys: Esta carpeta contiene el código fuente para un sistema de archivos básico.
+
+	- lib: Esta carpeta contiene una implementación de un subconjunto de la biblioteca estandar de C. Tanto en el kernel de pinto, como en 		       los programas de usuario, los headers que contiene esta carpeta puden ser incluidos usando la notacion #include<...>.
+
+	- misc:  
+
 	- threads: 
 	- userprog: 
 	- utils: 
