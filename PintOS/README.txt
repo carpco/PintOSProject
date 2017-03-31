@@ -21,29 +21,45 @@ Las carpetas y una explicación de su contenido es:
 Dentro de la carpeta threads/ encontramos los siguientes archivos:
 
 	- flags.h:
+
 	- init.c: El código dentro de este archivo permite la inicialización del kernel, include el main(), el programa principal del kernel.
-	- init.h: Es el header el archivo init.c
-	- interrupt.c: 
-	- interrupt.h:
-	- intr-stubs.h:
-	- intr-stubs.S:
-	- io.h:
-	- kernel.lds.S:
-	- loader.h:
-	- loader.S:
+	- init.h: Es el header el archivo init.c.
+
+	- interrupt.c: Aquí se encuentra el código para el manejo básico de interrupciones y funciones para activar y desactivar interrupciones.
+	- interrupt.h: Es el header del archivo interrupt.c.
+	
+	- intr-stubs.S: aquí está el código de ensamblaje para el manejo de interrupciones de bajo nivel.
+	- intr-stubs.h: Es el header del archivo intr-stubs.S.
+
+	- io.h: Aquí están las funciones para el acceso al puerto de Entrada/Salida. Es utilizado principalmente por los códigos fuente del directorio 'devices'.
+
+	- kernel.lds.S: Es el script de enlace para vincular el kernel. Este establece la dirrecion de carga del kernel.
+
+	- loader.S: Este es el cargador del kernel. El cual reúne 512 bytes de código y datos que el BIOS del PC carga en la memoria y que a su vez encuentra el kernel en el disco, lo carga en la memoria y salta a star() del archivo star.S
+	- loader.h: Es el header del archivo loader.S
+
 	- Make.vars:
+
 	- Makefile:
-	- malloc.c:
-	- malloc.h:
+
+	- malloc.c: Contiene una simple implementación de malloc () y free () para el kernel, para la solicitud y liberación de memoria respectivamente.
+	- malloc.h: Es el header del archivo malloc.c
+
 	- palloc.c:
 	- palloc.h:
-	- pte.h: 
+
+	- pte.h: Contiene funciones y macros para trabajar con direcciones virtuales y entradas de la tabla de páginas.
+
 	- start.S:
-	- switch.h:
-	- switch.S:
-	- sync.c:
-	- sync.h:
-	- thread.c:
-	- thread.h:
-	- vaddr.h:
+
+	- switch.S: Contiene una rutina de lenguaje ensamblador para la conmutación de hilos.
+	- switch.h: Es el header el archivo switch.S.
+
+	- synch.c: Aquí se encuentran las primitivas básicas de sincronización: semáforos, bloqueos, variables de condición y barreras de optimización.
+	- synch.h: Es el header del archivo synch.c.
+
+	- thread.c: Este código brinda el soporte básico de hilos.
+	- thread.h: Es el header del archivo thread.c
+
+	- vaddr.h: Contiene funciones y macros para trabajar con direcciones virtuales y entradas de la tabla de páginas.
 
