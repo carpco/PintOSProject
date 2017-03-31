@@ -8,19 +8,19 @@ Las carpetas y una explicación de su contenido es:
 
 	- lib: Esta carpeta contiene una implementación de un subconjunto de la biblioteca estandar de C. Tanto en el kernel de pintos, como en los programas de usuario, los headers que contiene esta carpeta puden ser incluidos usando la notacion #include<...>.
 
-	- misc:  
+	- misc: Contiene patches e información para instalar y depurar PintOS
 
 	- threads: Esta contiene el código fuenta para el kernel básico.
 
 	- userprog: Aquí se encuentra el código fuente para cargar los programas de usuario y así poder ser ejecutados.
 
-	- utils: 
+	- utils: Contiene archivos para utilizar PintOS en una computadora
 
 	- vm: Esta carpeta está destinada para que dentro de ella se realice la implementacion de una memoria virtual.
 
 Dentro de la carpeta threads/ encontramos los siguientes archivos:
 
-	- flags.h:
+	- flags.h:Macros que definen unos bits en el registro 80x86 de banderas 
 
 	- init.c: El código dentro de este archivo permite la inicialización del kernel, include el main(), el programa principal del kernel.
 	- init.h: Es el header el archivo init.c.
@@ -38,19 +38,19 @@ Dentro de la carpeta threads/ encontramos los siguientes archivos:
 	- loader.S: Este es el cargador del kernel. El cual reúne 512 bytes de código y datos que el BIOS del PC carga en la memoria y que a su vez encuentra el kernel en el disco, lo carga en la memoria y salta a star() del archivo star.S
 	- loader.h: Es el header del archivo loader.S
 
-	- Make.vars:
+	- Make.vars: Variables de compilación
 
-	- Makefile:
+	- Makefile: Archivo con instrucciones para compilar
 
 	- malloc.c: Contiene una simple implementación de malloc () y free () para el kernel, para la solicitud y liberación de memoria respectivamente.
 	- malloc.h: Es el header del archivo malloc.c
 
-	- palloc.c:
-	- palloc.h:
+	- palloc.c: Asignador de páginas, reparte la memoria en páginas de 4kb
+	- palloc.h: Es el header del archivo palloc.c
 
 	- pte.h: Contiene funciones y macros para trabajar con direcciones virtuales y entradas de la tabla de páginas.
 
-	- start.S:
+	- start.S: Hace la configuración básica para la protección de memoria y operaciones de 32 bits en CPUs 80x86
 
 	- switch.S: Contiene una rutina de lenguaje ensamblador para la conmutación de hilos.
 	- switch.h: Es el header el archivo switch.S.
