@@ -1,0 +1,36 @@
+            +----------------------------------------------------+
+			|        Principios de Sistemas Operativos           |
+			|                    I semestre, 2017                |
+			|   Documento de Diseño, Primer proyecto programado  |
+			+----------------------------------------------------+
+				   
+---- GRUPO ----
+
+Jason Salazar <jasago0408@gmail.com>
+Carlos Peralta <carpcu03@gmai.com>
+
+
+Calendarizador <First come first served>
+=======================================
+
+---- Estructuras de datos ----
+
+Para el este algoritmo no se declararon variables ni estructura nuevas.
+
+
+---- ALGORITMOS ----
+
+>> Para el algoritmo First come first served se base con el codigo existente de pintos el cual tiene el calendarizador de roun robin.
+Se modifico de tal forma que no se evalue el QUANTUN como condicion de cambio de hilo a ejecutar, con esto se convierte en un algoritmo First come first served.
+
+
+---- SYNC ----
+
+>>La condicion de carrera se da porque al modificar la prioridad del hilo que esta corriendo puede que otro hilo intente pasar a ejecucion.
+si se utiliza un lock cuando se cambia la prioridad se puede evitar la condicion de carrera porque va a empedir que otro hilo se ejecute. Este algoritmo no contempla esta condicion.
+
+---- JUSTIFICACION ----
+>>Se decidio utilizar esta implementacion pues, facilmente con una modificion del codigo que trae pintos se logra convertir el calendarizador ROUND ROBIN a uno First con first served, esto con solo no evaluar la condicion de cambio del hilo evaluando el QUANTUN.
+>>Al ser un algoritmo que ejecuta solo un hijo a la vez, es ineficiente en cuanto al uso del procesador pues se podria estar usando otras funciones del procesador por otro hilo.
+
+___________________________________________________________________
